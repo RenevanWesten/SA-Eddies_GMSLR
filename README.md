@@ -12,4 +12,4 @@ The model output are stored as NETCDF files.
 
 Full model output and details are available upon reasonable request from the authors.
 
-The response function were obtained from Levermann et al. (2020, https://doi.org/10.5194/esd-11-35-2020, https://github.com/ALevermann/Larmip2019)
+The response functions were obtained from Levermann et al. (2020, https://doi.org/10.5194/esd-11-35-2020, https://github.com/ALevermann/Larmip2019)
