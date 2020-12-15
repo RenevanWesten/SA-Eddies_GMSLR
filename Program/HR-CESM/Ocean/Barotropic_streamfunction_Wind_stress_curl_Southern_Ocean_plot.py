@@ -40,13 +40,17 @@ def PeriodicBoundaries(lon, lat, field, lon_grids = 1):
 #--------------------------------MAIN SCRIPT STARTS HERE----------------------------------
 #-----------------------------------------------------------------------------------------
 
-HEAT_data = netcdf.Dataset(directory+'Ocean/Barotropic_streamfunction_Southern_Ocean.nc', 'r')
+HEAT_data = netcdf.Dataset(directory+'Ocean/Barotropic_streamfunction_Southern_Ocean_year_2000-2029.nc', 'r')
 
-#Writing data to correct variable	  
 lon_1		= HEAT_data.variables['lon'][:] 		
-lat_1		= HEAT_data.variables['lat'][:1000] 		
-BSF_1		= HEAT_data.variables['BSF_2000-2029'][:]
-BSF_2		= HEAT_data.variables['BSF_2071-2100'][:]
+lat_1		= HEAT_data.variables['lat'][:] 		
+BSF_1		= HEAT_data.variables['BSF'][:]
+
+HEAT_data.close()
+
+HEAT_data = netcdf.Dataset(directory+'Ocean/Barotropic_streamfunction_Southern_Ocean_year_2071-2100.nc', 'r')
+
+BSF_2		= HEAT_data.variables['BSF'][:]
 
 HEAT_data.close()
 
@@ -56,12 +60,17 @@ lon_1, BSF_2		= PeriodicBoundaries(lon_1, lat_1, BSF_2)
 
 #-----------------------------------------------------------------------------------------
 
-HEAT_data = netcdf.Dataset(directory+'Ocean/Wind_stress_curl_Southern_Ocean.nc', 'r')
+HEAT_data = netcdf.Dataset(directory+'Ocean/Wind_stress_curl_Southern_Ocean_year_2000-2029.nc', 'r')
 
 lon_2	        = HEAT_data.variables['lon'][:] 			
 lat_2		= HEAT_data.variables['lat'][:] 			
-wind_1		= HEAT_data.variables['WIND_2000-2029'][:]
-wind_2		= HEAT_data.variables['WIND_2071-2100'][:]
+wind_1		= HEAT_data.variables['WIND'][:]
+
+HEAT_data.close()
+
+HEAT_data = netcdf.Dataset(directory+'Ocean/Wind_stress_curl_Southern_Ocean_year_2071-2100.nc', 'r')
+			
+wind_2		= HEAT_data.variables['WIND'][:]
 
 HEAT_data.close()
 
