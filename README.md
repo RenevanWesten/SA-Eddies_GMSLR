@@ -1,6 +1,6 @@
 # SA-Eddies_GMSLR
 
-Ocean Eddies Strongly Affect Global Mean Sea-level Projections, Science Advances (2020, under review)
+Ocean Eddies Strongly Affect Global Mean Sea-level Projections, Science Advances (2021, Accepted)
 
 René M. van Westen and Henk A. Dijkstra
 
